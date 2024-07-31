@@ -5,6 +5,7 @@ import Home from './views/home/Home';
 import About from './views/About/About';
 import Adminhome from './views/AdminHome/AdminHome';
 import Userhome from './views/userHome/Userhome';
+import RequerAuth from './components/RequerAuth/RequerAuth';
 
 const Approutes = () => {
   return (
@@ -13,7 +14,14 @@ const Approutes = () => {
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='about-us' element={<Navigate to='/about' />} />
-        <Route path='Admin' element={<Adminhome />} />
+        <Route
+          path='Admin'
+          element={
+            <RequerAuth>
+              <Adminhome />
+            </RequerAuth>
+          }
+        />
         <Route path='user' element={<Userhome />} />
       </Route>
     </Routes>
