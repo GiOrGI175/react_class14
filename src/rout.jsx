@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './views/home/Home';
 import About from './views/About/About';
+import Adminhome from './views/AdminHome/AdminHome';
+import Userhome from './views/userHome/Userhome';
 
 const Approutes = () => {
   return (
@@ -11,6 +13,8 @@ const Approutes = () => {
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='about-us' element={<Navigate to='/about' />} />
+        <Route path='Admin' element={<Adminhome />} />
+        <Route path='user' element={<Userhome />} />
       </Route>
     </Routes>
   );
